@@ -1,26 +1,26 @@
 [
   {
-    "name": "dino1"
+    "id": "dino1",
     "imgLink": "/images/dino1.jpg"
   },
   {
-    "name": "dino2"
+    "id": "dino2",
     "imgLink": "/images/dino2.jpg"
   },
   {
-    "name": "dino3"
+    "id": "dino3",
     "imgLink": "/images/dino3.jpg"
   },
   {
-    "name": "dino4"
+    "id": "dino4",
     "imgLink": "/images/dino4.jpg"
   },
   {
-    "name": "dino5"
+    "id": "dino5",
     "imgLink": "/images/dino5.jpg"
   },
   {
-    "name": "dino6"
+    "id": "dino6",
     "imgLink": "/images/dino6.png"
   }
 ]
