@@ -2,33 +2,56 @@ var $cuteDinos = $('#cuteDinos');
 
 
 $(document).ready(function(){
-    AJAXcall();
+    initDeck();
 
     $cuteDinos.on('click', '#getDeck', function(){
         $cuteDinos.empty();
-        AJAXcall();
+        initDeck();
     });
 
-    $cuteDinos.on('click', '#changeDino', function(){
-        var dinos = ['dino1', 'dino2', 'dino3', 'dino4', 'dino5', 'dino6'];
 
-        $('div').each(function(index){
-            console.log($(this).data('id'));
-        })
-
-
-    });
-
-    function AJAXcall(){
+    function initDeck(){
         $.ajax({
             type: 'GET',
             dataType: 'json',
             url: '/cute'})
 
             .done(function(data){
+
+                var deck = data;
                 var $buttonGenerate = $('<button>').text('Change Deck').attr('id','getDeck');
                 $cuteDinos.prepend($buttonGenerate);
-                displayNewDeck(data);
+                displayNewDeck(deck);
+
+                //swap Dino event handler
+                $cuteDinos.on('click', '#changeDino', function(){
+
+                    var displayedDinos = [];
+                    var swapDino;
+                    var i = 0;
+                    var $newDino = $('<div>');
+
+                    //store displayed Dinos in an array, then sort.
+                    $('div').each(function(){
+                        displayedDinos.push($(this).data('id'));
+                        displayedDinos.sort();
+                    });
+
+                    console.log("Current Dinos: " + displayedDinos);
+
+                    //iterates through the displayedDinos array and stores the one that is missing in swapDino
+                    while(displayedDinos[i] == 'dino' + (i+1)){
+                        swapDino = ('dino' + (i + 2));
+                        i++;
+                    };
+
+                    console.log("Replace with: " + swapDino);
+
+                    $newDino.html(swapDino);
+                    $(this).parent().replaceWith($newDino);
+
+                });
+
 
             })
 
