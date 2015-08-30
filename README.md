@@ -1,5 +1,7 @@
 # maxiumum_cute_card_deck
 
+[![Join the chat at https://gitter.im/panoptican/prime_peer_fs_02](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/panoptican/prime_peer_fs_02?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 In this assignment, you’re going to practice peer programming while reinforcing the following topics: fileserving, creating project structures, and separating client-side code from server-side code.
 
 The requirements are split into four sections. Switch places (i.e. 1 person at the keyboard, 1 person speaking-out-loud the requirements) when you encounter a new section.
